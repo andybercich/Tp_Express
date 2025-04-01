@@ -1,0 +1,46 @@
+{
+    "backlog": {
+        "tareas": [
+            {
+                "id": "tarea1",
+                "titulo": "Tarea backlog",
+                "descripcion": "Descripcion tarea backlog",
+                "estado": "pendiente",
+                "fechaLimite": "2025-03-05"
+            }
+        ]
+    },
+    "sprintList": {
+        "sprints": [
+            {
+                "id": "sprint1",
+                "fechaInicio": "2025-03-04",
+                "fechaCierre": "2025-03-11",
+                "nombre": "Sprint 122",
+                "tareas": [
+                    {
+                        "id": "tarea2",
+                        "titulo": "Tarea 2",
+                        "descripcion": "Estamos aca todos juntos",
+                        "estado": "en progreso",
+                        "fechaLimite": "2025-03-06"
+                    },{
+                        "id": "tarea3",
+                        "titulo": "Tarea 3",
+                        "descripcion": "Estamos aca todos juntos",
+                        "estado": "pendiente",
+                        "fechaLimite": "2025-03-06"
+                    },
+
+                    {
+                        "id": "tarea4",
+                        "titulo": "Tarea 4",
+                        "descripcion": "Estamos aca todos en tarea 4",
+                        "estado": "completado",
+                        "fechaLimite": "2025-03-06"
+                    }
+                ]
+            }
+        ]
+    }
+}
