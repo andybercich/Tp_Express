@@ -6,6 +6,7 @@ interface ITareaStore {
   tareaActiva: ITarea | null;
   setArrayTareas: (arrayTarea: ITarea[]) => void;
   setTareaActiva: (tareaActiva: ITarea | null) => void;
+  agregarTarea: (nuevaTarea: ITarea) => void;
 }
 
 export const tareaStore = create<ITareaStore>((set) => ({
@@ -13,4 +14,6 @@ export const tareaStore = create<ITareaStore>((set) => ({
   tareaActiva: null,
   setArrayTareas: (arrayTarea) => set(() => ({ tareas: arrayTarea })),
   setTareaActiva: (tareaActiva) => set(() => ({ tareaActiva })),
+  agregarTarea: (nuevaTarea) =>
+    set((state) => ({ tareas: [...state.tareas, nuevaTarea] })),
 }));

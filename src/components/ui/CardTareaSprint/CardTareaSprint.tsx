@@ -7,16 +7,22 @@ interface ICardTareaSprint {
 }
 
 export const CardTareaSprint: FC<ICardTareaSprint> = ({ tarea }) => {
+  const [cardHover, setCardHover] = useState<boolean>(false);
+
   return (
     <>
-      <div className="cardTareaSpintContainer">
+      <div
+        className="cardTareaSpintContainer"
+        onMouseEnter={() => setCardHover(true)}
+        onMouseLeave={() => setCardHover(false)}
+      >
         <div
           className={
             String(tarea.estado) === "pendiente"
-              ? ("cardTareaSpintInfo colorPendiente")
-              : (String(tarea.estado) === "en progreso"
-              ? ("cardTareaSpintInfo colorEnProgreso")
-              : ("cardTareaSpintInfo colorCompletado"))
+              ? "cardTareaSpintInfo colorPendiente"
+              : String(tarea.estado) === "en progreso"
+              ? "cardTareaSpintInfo colorEnProgreso"
+              : "cardTareaSpintInfo colorCompletado"
           }
         >
           <p>
@@ -34,7 +40,7 @@ export const CardTareaSprint: FC<ICardTareaSprint> = ({ tarea }) => {
 
           <button>Enviar al backlog</button>
         </div>
-        <div className="buttonCard">
+        <div className={cardHover ? "buttonCardHover" : "buttonCard"}>
           <button className="buttonCardVisibility">
             <span className="material-symbols-outlined">visibility</span>
           </button>

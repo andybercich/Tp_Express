@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTarea } from "../../../hooks/useTarea";
 import "./TareasBacklog.scss";
 import { CardTareasBacklog } from "../CardTareasBacklog/CardTareasBacklog";

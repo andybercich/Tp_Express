@@ -31,10 +31,10 @@
       font-family: "Montserrat Alternates", sans-serif;
       color: white;
       font-weight: 200;
-      overflow: hidden; /* Oculta el texto que se desborda */
-      text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
-      white-space: nowrap; /* Evita que el texto pase a otra línea */
-      width: 100%; /* Asegura que el ancho esté bien definido */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
     }
 
     button {
@@ -69,7 +69,13 @@
   }
 
   .buttonCard {
+    display: none;
+    pointer-events: none;
+  }
+
+  .buttonCardHover {
     display: flex;
+    opacity: 1;
     flex-direction: column;
     height: 18vh;
     justify-content: space-around;

@@ -28,9 +28,8 @@ export const postTareas = async (
   nuevaTarea: ITarea
 ): Promise<ITarea | null> => {
   try {
-    const response = await axios.post(API_ENDPOINTS.BACKLOG, {
-      ...nuevaTarea,
-    });
+    console.log("Enviando tarea:", nuevaTarea);
+    const response = await axios.post(API_ENDPOINTS.BACKLOG, { ...nuevaTarea });
     return response.data.tareas;
   } catch (error) {
     console.log("No se pudo crear la tarea -", error);

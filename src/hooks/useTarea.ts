@@ -1,13 +1,17 @@
 import { useShallow } from "zustand/shallow";
 import { tareaStore } from "../store/tareasStore";
 import { ITarea } from "../types/ITareas";
-import { getTareasController } from "../data/tareaController";
+import {
+  getTareasController,
+  postTareaController,
+} from "../data/tareaController";
 
 export const useTarea = () => {
-  const { tareas, setArrayTareas } = tareaStore(
+  const { tareas, setArrayTareas, agregarTarea } = tareaStore(
     useShallow((state) => ({
       tareas: state.tareas,
       setArrayTareas: state.setArrayTareas,
+      agregarTarea: state.agregarTarea,
     }))
   );
 
@@ -16,8 +20,18 @@ export const useTarea = () => {
     if (data) setArrayTareas(data);
   };
 
+  const postTareaHook = async (nuevaTarea: ITarea) => {
+    try {
+      await postTareaController(nuevaTarea);
+      getAllTareasHook();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     tareas,
     getAllTareasHook,
+    postTareaHook,
   };
 };
