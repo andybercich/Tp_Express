@@ -1,0 +1,32 @@
+.verModalContiner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: brightness(90%) blur(2px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .verModal {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.4rem !important;
+    border-top-left-radius: 0.4rem !important;
+
+    h1 {
+      width: 100%;
+      font-family: "Montserrat Alternates", sans-serif !important;
+      color: black !important;
+      font-weight: 300;
+      background-color: #625d5d !important;
+      border-bottom: 2px solid black !important;
+    }
+  }
+}

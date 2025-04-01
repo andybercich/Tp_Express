@@ -1,0 +1,115 @@
+.cardTareasBacklogContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0.4rem;
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  align-items: center;
+  padding: 0.4rem;
+  filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.8));
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .cardTareasBacklogButton {
+    background-color: transparent;
+    border: 3px solid #5e6fb4;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    color: #5e6fb4;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: bold;
+  }
+
+  .cardTareasBacklogButton:hover {
+    cursor: pointer;
+  }
+
+  select {
+    background-color: #5e6fb4;
+    color: white;
+    font-family: "Montserrat Alternates", sans-serif;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 0.4rem;
+
+    option {
+      background-color: white;
+      color: #5e6fb4;
+      font-family: "Montserrat Alternates", sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  .buttonCard {
+    display: flex;
+    flex-direction: row;
+    margin: 0.4rem;
+    justify-content: space-evenly;
+    gap: 0.4rem;
+
+    .buttonCardVisibility {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5vw;
+      margin: 0 !important;
+      background-color: #5e6fb4;
+      color: white;
+      border-radius: 0.4rem;
+      border: none;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    .buttonCardVisibility:hover {
+      cursor: pointer;
+    }
+
+    .buttonCardEdit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5vw;
+      margin: 0 !important;
+      color: white;
+      border-radius: 0.4rem;
+      border: none;
+      background-color: #efc94c;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    .buttonCardEdit:hover {
+      cursor: pointer;
+    }
+
+    .buttonCardDelete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5vw;
+      margin: 0 !important;
+      color: white;
+      border-radius: 0.4rem;
+      border: none;
+      background-color: #ff3b30;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    .buttonCardDelete:hover {
+      cursor: pointer;
+    }
+  }
+}
