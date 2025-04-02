@@ -5,6 +5,7 @@ import {
   postSprints,
   putSprint,
 } from "../http/sprints";
+
 import { ISprints } from "../types/ISprints";
 
 export const getSprintsController = async (): Promise<ISprints[]> => {

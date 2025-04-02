@@ -1,50 +1,57 @@
 {
-    "backlog": {
-        "tareas": [
-            {
-                "id": "tarea1",
-                "titulo": "Tarea backlog",
-                "descripcion": "Descripcion tarea backlog",
-                "estado": "pendiente",
-                "fechaLimite": "2025-03-05"
-            }
-        ]
-    },
-    "sprintList": {
-        "sprints": [
-            {
-                "id": "sprint1",
-                "fechaInicio": "2025-03-04",
-                "fechaCierre": "2025-03-11",
-                "nombre": "Sprint 122",
-                "tareas": [
-                    {
-                        "id": "tarea2",
-                        "titulo": "Tarea 2",
-                        "descripcion": "Estamos aca todos juntos",
-                        "estado": "en progreso",
-                        "fechaLimite": "2025-03-06"
-                    },{
-                        "id": "tarea3",
-                        "titulo": "Tarea 3",
-                        "descripcion": "Estamos aca todos juntos",
-                        "estado": "pendiente",
-                        "fechaLimite": "2025-03-06"
-                    },{
-                        "id": "tarea4",
-                        "titulo": "Tarea 4",
-                        "descripcion": "Estamos aca todos en tarea 4",
-                        "estado": "completado",
-                        "fechaLimite": "2025-03-06"
-                    },{
-                        "id": "tarea5",
-                        "titulo": "Tarea 5",
-                        "descripcion": "Estamos aca todos en tarea 4",
-                        "estado": "completado",
-                        "fechaLimite": "2025-03-06"
-                    }
-                ]
-            }
-        ]
+  "backlog": [
+    {
+      "id": "tarea1",
+      "titulo": "Tarea backlog",
+      "descripcion": "Descripcion tarea backlog",
+      "estado": "pendiente",
+      "fechaLimite": "2025-03-05"
     }
+  ],
+  "sprints": [
+    {
+      "id": "sprint2",
+      "fechaInicio": "2025-03-12",
+      "fechaCierre": "2025-03-19",
+      "nombre": "Sprint 123",
+      "tareas": [
+        {
+          "id": "tarea3",
+          "titulo": "Tarea 3",
+          "descripcion": "Nueva tarea para el sprint 123",
+          "estado": "pendiente",
+          "fechaLimite": "2025-03-15"
+        },
+        {
+          "id": "tarea4",
+          "titulo": "Tarea 4",
+          "descripcion": "Otra tarea en progreso",
+          "estado": "en progreso",
+          "fechaLimite": "2025-03-18"
+        }
+      ]
+    },
+    {
+      "id": "sprint3",
+      "fechaInicio": "2025-03-20",
+      "fechaCierre": "2025-03-27",
+      "nombre": "Sprint 124",
+      "tareas": [
+        {
+          "id": "tarea5",
+          "titulo": "Tarea 5",
+          "descripcion": "Investigación sobre nueva tecnología",
+          "estado": "completada",
+          "fechaLimite": "2025-03-22"
+        },
+        {
+          "id": "tarea6",
+          "titulo": "Tarea 6",
+          "descripcion": "Revisión de código",
+          "estado": "pendiente",
+          "fechaLimite": "2025-03-26"
+        }
+      ]
+    }
+  ]
 }
