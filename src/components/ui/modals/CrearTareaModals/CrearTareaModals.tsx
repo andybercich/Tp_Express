@@ -1,8 +1,6 @@
-import { FC, FormEvent} from "react";
+import { FC, FormEvent } from "react";
 import { ITarea } from "../../../../types/ITareas";
 import { useForm } from "../../../../hooks/useForm";
-
-
 
 interface ICrearTareaModal {}
 

@@ -2,6 +2,9 @@ import { FC, useEffect, useState } from "react";
 import { ITarea } from "../../../types/ITareas";
 import { useSprint } from "../../../hooks/useSprint";
 import "./CardTareasBacklog.scss";
+import { tareaStore } from "../../../store/tareasStore";
+import { useShallow } from "zustand/shallow";
+import { VerTareaModal } from "../modals/VerTareaModal/VerTareaModal";
 
 interface ICardTareasBacklog {
   tareas: ITarea;
@@ -9,6 +12,21 @@ interface ICardTareasBacklog {
 
 export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
   const { getAllSprintsHook, sprints } = useSprint();
+  const { setTareasActivas, tareaActiva } = tareaStore(
+    useShallow((state) => ({
+      setTareasActivas: state.setTareaActiva,
+      tareaActiva: state.tareaActiva,
+    }))
+  );
+  const [buttonVerTarea, setbuttonVerTarea] = useState<boolean>(false);
+  const handleOpenVerTarea = (tarea: ITarea) => {
+    setTareasActivas(tarea);
+    setbuttonVerTarea(true);
+  };
+  const handleCloseVerTarea = () => {
+    setTareasActivas(null);
+    setbuttonVerTarea(false);
+  };
 
   useEffect(() => {
     getAllSprintsHook();
@@ -38,7 +56,10 @@ export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
           )}
         </select>
         <div className="buttonCard">
-          <button className="buttonCardVisibility">
+          <button
+            onClick={() => handleOpenVerTarea(tareas)}
+            className="buttonCardVisibility"
+          >
             <span className="material-symbols-outlined">visibility</span>
           </button>
           <button className="buttonCardEdit">
@@ -49,6 +70,12 @@ export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
           </button>
         </div>
       </div>
+      {buttonVerTarea && (
+        <VerTareaModal
+          tarea={tareaActiva}
+          handelCloseVerTarea={handleCloseVerTarea}
+        />
+      )}
     </>
   );
 };

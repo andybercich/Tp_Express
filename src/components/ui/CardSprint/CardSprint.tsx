@@ -11,7 +11,9 @@ export const CardSprint: FC<ICardSprint> = ({ sprint }) => {
   const navigate = useNavigate();
 
   const handleNavigateButton = () => {
-    navigate("/vistaSprint", { state: { sprint } });
+    console.log(sprint),
+    navigate("/vistaSprint", { state: { sprint } })
+    
   };
 
   return (
@@ -31,7 +33,7 @@ export const CardSprint: FC<ICardSprint> = ({ sprint }) => {
           </p>
         </div>
         <div className="buttonCard">
-          <button className="buttonCardVisibility">
+          <button className="buttonCardVisibility"onClick={()=>handleNavigateButton()}>
             <span className="material-symbols-outlined">visibility</span>
           </button>
           <button className="buttonCardEdit">
