@@ -1,55 +1,61 @@
 import {
+  deleteTareaPorId,
   getAllTareas,
   getTareaPorId,
-  postTarea,
+  postTareas,
   putTarea,
-  deleteTareaPorId,
 } from "../http/tarea";
-import { ITareas } from "../types/ITareas";
+import { ITarea } from "../types/ITareas";
 
-export const getTareaController = async ():Promise<ITareas[]> => {
+export const getTareasController = async (): Promise<ITarea[]> => {
   try {
-    
-    console.log(await getAllTareas())
     return await getAllTareas();
   } catch (error) {
-    console.log(error);
+    console.log("Error al obtener tareas en el controller -", error);
     return [];
   }
 };
 
-export const getTareaPorIdController = async (idTarea: string) => {
+export const getTareaPorIdController = async (
+  idTarea: string
+): Promise<ITarea | null> => {
   try {
     return await getTareaPorId(idTarea);
   } catch (error) {
-    console.log(error);
+    console.log("No se pudieron listar la tarea en el controller -", error);
     return null;
   }
 };
 
-export const postTareaController = async (nuevaTarea: ITareas) => {
+export const postTareaController = async (
+  nuevaTarea: ITarea
+): Promise<ITarea | null> => {
   try {
-    return await postTarea(nuevaTarea);
+    return await postTareas(nuevaTarea);
   } catch (error) {
-    console.log(error);
+    console.log("No se pudo crear la tarea en el controller -", error);
     return null;
   }
 };
 
-export const putTareaController = async (tareaEdita: ITareas) => {
+export const putTareaController = async (
+  tareaEditado: ITarea
+): Promise<ITarea | null> => {
   try {
-    return await putTarea(tareaEdita);
+    return await putTarea(tareaEditado);
   } catch (error) {
-    console.log(error);
+    console.log("No se pudo editar la tarea en el controller-", error);
     return null;
   }
 };
 
-export const deleteTareaPorIdController = async (tareaEliminada: string) => {
+export const deleteTareaPorIdController = async (
+  idTarea: string
+): Promise<ITarea | null> => {
   try {
-    return await deleteTareaPorId(tareaEliminada);
+    return await deleteTareaPorId(idTarea);
   } catch (error) {
-    console.log(error);
+    console.log("No se pudo eliminar la tarea en el controller-", error);
     return null;
   }
 };

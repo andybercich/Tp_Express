@@ -1,0 +1,21 @@
+.backlogContainerNavigate {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.1fr 1fr;
+    background-color: #091d55;
+    height: 100vh;
+  
+    h1 {
+      grid-column: span 2;
+      display: flex;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: bolder;
+      background-color: #625d5d;
+      height: 100%;
+      align-items: center;
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+    }
+  }
+  

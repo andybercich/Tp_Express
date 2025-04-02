@@ -1,15 +1,11 @@
-import { useEffect } from "react";
-import { useTarea } from "./hooks/useTarea";
+import { AppRouter } from "./routes/AppRouter";
 
 function App() {
-  const { getAllTareasHooks, tareas } = useTarea();
-  useEffect(() => {
-    getAllTareasHooks();
-  }, []);
-
-  console.log(tareas);
-
-  return <></>;
+  return (
+    <>
+      <AppRouter />
+    </>
+  );
 }
 
 export default App;

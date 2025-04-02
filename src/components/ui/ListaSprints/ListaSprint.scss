@@ -1,0 +1,85 @@
+.listaSprintContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  place-self: center;
+
+  button {
+    display: flex;
+    margin: 0.4rem;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    font-size: 1.5rem;
+    margin-top: 2rem !important;
+    border: 3px solid #ffffff;
+    background-color: #5e6fb4;
+    color: #ffffff;
+    gap: 0.4rem;
+
+    span {
+      color: #ffffff;
+      font-size: 2.5rem;
+    }
+  }
+
+  button:hover{
+    cursor: pointer;
+  }
+
+  .listSprintContainer {
+    height: 80%;
+    width: 80%;
+    background-color: #b0b0b0;
+    border-radius: 0.4rem;
+    display: flex;
+    border: 3px solid #ffffff;
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .listSprintH2Button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-bottom: #091d55 solid 3px;
+
+        h2 {
+          text-align: center;
+          width: 100%;
+          font-size: 1.5rem;
+          color: #091d55;
+          font-family: "Poppins", sans-serif;
+        }
+
+        button {
+          width: 20%;
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 1rem;
+          border: none;
+
+          span {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

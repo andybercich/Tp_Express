@@ -1,9 +1,7 @@
-import { IEstadoTareas } from "./IEstadoTareas";
-
-export interface ITareas {
+export interface ITarea {
   id: string;
   titulo: string;
   descripcion: string;
-  estado: IEstadoTareas;
+  estado: string;
   fechaLimite: Date;
 }

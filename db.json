@@ -30,11 +30,15 @@
                         "descripcion": "Estamos aca todos juntos",
                         "estado": "pendiente",
                         "fechaLimite": "2025-03-06"
-                    },
-
-                    {
+                    },{
                         "id": "tarea4",
                         "titulo": "Tarea 4",
+                        "descripcion": "Estamos aca todos en tarea 4",
+                        "estado": "completado",
+                        "fechaLimite": "2025-03-06"
+                    },{
+                        "id": "tarea5",
+                        "titulo": "Tarea 5",
                         "descripcion": "Estamos aca todos en tarea 4",
                         "estado": "completado",
                         "fechaLimite": "2025-03-06"

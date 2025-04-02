@@ -1,9 +1,9 @@
 import { ITarea } from "./ITareas";
 
-export interface ISriprint {
+export interface ISprints {
   id: string;
   fechaInicio: Date;
   fechaCierre: Date;
-  Nombre: string;
+  nombre: string;
   tareas: ITarea[];
 }
