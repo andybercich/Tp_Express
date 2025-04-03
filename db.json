@@ -1,42 +1,4 @@
 {
   "backlog": [],
-  "sprints": [
-    {
-      "id": "ff3b7ecf-8bed-4c76-bb28-0ec45e5f577b",
-      "fechaInicio": "2025-04-10",
-      "fechaCierre": "2025-04-30",
-      "nombre": "dfdfg",
-      "tareas": [
-        {
-          "id": "063b88c3-6dc4-4f9e-aab5-c86c08290d05",
-          "titulo": "Tarea And",
-          "descripcion": "fsrfdtgdgghyh",
-          "fechaLimite": "2025-04-30",
-          "estado": "pendiente"
-        }
-      ]
-    },
-    {
-      "id": "6f0294e8-c420-467a-9b43-6e5f4faeb34d",
-      "fechaInicio": "2025-04-15",
-      "fechaCierre": "2025-04-25",
-      "nombre": "srftg",
-      "tareas": [
-        {
-          "id": "62d256c4-a31c-458d-84c3-a61de52f5499",
-          "titulo": "Tarea Andy",
-          "descripcion": "fsrfdtgdgghyh",
-          "fechaLimite": "2025-04-24",
-          "estado": "pendiente"
-        },
-        {
-          "id": "868a8b2f-2eb4-4374-827c-dc4611be129c",
-          "titulo": "Tarea Andy",
-          "descripcion": "fsrfdtgdgghyh",
-          "fechaLimite": "2025-04-18",
-          "estado": "pendiente"
-        }
-      ]
-    }
-  ]
+  "sprints": []
 }

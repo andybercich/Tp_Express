@@ -1,12 +1,13 @@
 import axios from "axios";
 import { ITarea } from "../types/ITareas";
-import { API_ENDPOINTS } from "../utils/url";
 import { getSprintsPorId, putSprint } from "./sprints";
-import { badContest } from "../components/ui/PopUps/Alerts/ServerBadAlert";
 import { ISprints } from "../types/ISprints";
+
+const apiBacklog = `${import.meta.env.VITE_BASE_URL}/backlog`;
+
 export const getAllTareas = async (): Promise<ITarea[] | []> => {
   try {
-    const response = await axios.get(API_ENDPOINTS.BACKLOG);
+    const response = await axios.get(apiBacklog);
     return response.data;
   } catch (error) {
     console.log("No se pudieron listar las tareas -", error);
@@ -57,7 +58,7 @@ export const getTareaPorId = async (
   idTarea: string
 ): Promise<ITarea | null> => {
   try {
-    const response = await axios.get(`${API_ENDPOINTS.BACKLOG}/${idTarea}`);
+    const response = await axios.get(`${apiBacklog}/${idTarea}`);
     return response.data;
   } catch (error) {
     console.log("No se pudieron listar la tarea -", error);
@@ -70,7 +71,7 @@ export const postTareas = async (
 ): Promise<ITarea | null> => {
   try {
     console.log("Enviando tarea:", nuevaTarea);
-    const response = await axios.post(API_ENDPOINTS.BACKLOG, { ...nuevaTarea });
+    const response = await axios.post(apiBacklog, { ...nuevaTarea });
     return response.data;
   } catch (error) {
     console.log("No se pudo crear la tarea -", error);
@@ -83,7 +84,7 @@ export const putTarea = async (
 ): Promise<ITarea | null> => {
   try {
     const response = await axios.put(
-      `${API_ENDPOINTS.BACKLOG}/${tareaActualizada.id}`,
+      `${apiBacklog}/${tareaActualizada.id}`,
       { ...tareaActualizada }
     );
     return response.data;
@@ -97,7 +98,7 @@ export const deleteTareaPorId = async (
   idTarea: string
 ): Promise<ITarea | null> => {
   try {
-    const response = await axios.delete(`${API_ENDPOINTS.BACKLOG}/${idTarea}`);
+    const response = await axios.delete(`${apiBacklog}/${idTarea}`);
     return response.data;
   } catch (error) {
     console.log("No se pudo eliminar la tarea -", error);
