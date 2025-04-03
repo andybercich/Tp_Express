@@ -3,5 +3,5 @@ export interface ITarea {
   titulo: string;
   descripcion: string;
   estado: string;
-  fechaLimite: Date;
+  fechaLimite: string;
 }

@@ -2,9 +2,11 @@ import {
   deleteTareaPorId,
   getAllTareas,
   getTareaPorId,
+  moverTareaASprint,
   postTareas,
   putTarea,
 } from "../http/tarea";
+import { ISprints } from "../types/ISprints";
 import { ITarea } from "../types/ITareas";
 
 export const getTareasController = async (): Promise<ITarea[]> => {
@@ -15,6 +17,19 @@ export const getTareasController = async (): Promise<ITarea[]> => {
     return [];
   }
 };
+
+export const moveTareaToSprint = async ( idTarea : string, idSprint: string ): Promise<ISprints> =>{
+  try {
+    
+    const response = await moverTareaASprint( idTarea, idSprint);
+
+    return response;
+
+  } catch (error) {
+    throw new Error("Error al intentar mover la tarea: "+ error);
+    
+  }
+}
 
 export const getTareaPorIdController = async (
   idTarea: string

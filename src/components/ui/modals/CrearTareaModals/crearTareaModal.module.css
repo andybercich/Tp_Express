@@ -1,0 +1,71 @@
+.mainDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.095);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+  }
+  .modalUser {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.divClose {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.formularios{
+
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.8rem;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.formularios input {
+
+  width: 15vw;
+  height: 2.5rem;
+  border-radius: 10px;
+  gap: 10px;
+  background-color: #e7e6e6;
+  outline: none;
+  border: 1px solid rgb(158, 158, 158);
+  transition: 450ms;
+}
+
+.formularios input:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.dateContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buttonContainer {
+  margin-top: 1.4rem;
+}

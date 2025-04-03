@@ -1,55 +1,40 @@
 {
-  "backlog": [
-    {
-      "id": "tarea1",
-      "titulo": "Tarea backlog",
-      "descripcion": "Descripcion tarea backlog",
-      "estado": "pendiente",
-      "fechaLimite": "2025-03-05"
-    }
-  ],
+  "backlog": [],
   "sprints": [
     {
-      "id": "sprint2",
-      "fechaInicio": "2025-03-12",
-      "fechaCierre": "2025-03-19",
-      "nombre": "Sprint 123",
+      "id": "ff3b7ecf-8bed-4c76-bb28-0ec45e5f577b",
+      "fechaInicio": "2025-04-10",
+      "fechaCierre": "2025-04-30",
+      "nombre": "dfdfg",
       "tareas": [
         {
-          "id": "tarea3",
-          "titulo": "Tarea 3",
-          "descripcion": "Nueva tarea para el sprint 123",
-          "estado": "pendiente",
-          "fechaLimite": "2025-03-15"
-        },
-        {
-          "id": "tarea4",
-          "titulo": "Tarea 4",
-          "descripcion": "Otra tarea en progreso",
-          "estado": "en progreso",
-          "fechaLimite": "2025-03-18"
+          "id": "063b88c3-6dc4-4f9e-aab5-c86c08290d05",
+          "titulo": "Tarea And",
+          "descripcion": "fsrfdtgdgghyh",
+          "fechaLimite": "2025-04-30",
+          "estado": "pendiente"
         }
       ]
     },
     {
-      "id": "sprint3",
-      "fechaInicio": "2025-03-20",
-      "fechaCierre": "2025-03-27",
-      "nombre": "Sprint 124",
+      "id": "6f0294e8-c420-467a-9b43-6e5f4faeb34d",
+      "fechaInicio": "2025-04-15",
+      "fechaCierre": "2025-04-25",
+      "nombre": "srftg",
       "tareas": [
         {
-          "id": "tarea5",
-          "titulo": "Tarea 5",
-          "descripcion": "Investigación sobre nueva tecnología",
-          "estado": "completada",
-          "fechaLimite": "2025-03-22"
+          "id": "62d256c4-a31c-458d-84c3-a61de52f5499",
+          "titulo": "Tarea Andy",
+          "descripcion": "fsrfdtgdgghyh",
+          "fechaLimite": "2025-04-24",
+          "estado": "pendiente"
         },
         {
-          "id": "tarea6",
-          "titulo": "Tarea 6",
-          "descripcion": "Revisión de código",
-          "estado": "pendiente",
-          "fechaLimite": "2025-03-26"
+          "id": "868a8b2f-2eb4-4374-827c-dc4611be129c",
+          "titulo": "Tarea Andy",
+          "descripcion": "fsrfdtgdgghyh",
+          "fechaLimite": "2025-04-18",
+          "estado": "pendiente"
         }
       ]
     }

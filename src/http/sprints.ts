@@ -17,7 +17,7 @@ export const getSprintsPorId = async (idSprint: string): Promise<ISprints | null
     const response = await axios.get(`${API_ENDPOINTS.SPRINT_LIST}/${idSprint}`);
     return response.data;
   } catch (error) {
-    console.log("No se pudieron listar el sprint -", error);
+    console.log("No se pudo listar el sprint -", error);
     return null;
   }
 };

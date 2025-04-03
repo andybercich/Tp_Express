@@ -1,6 +1,5 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { ListaSprints } from "../../ui/ListaSprints/ListaSprints";
-import { TareasBacklog } from "../../ui/TareasBacklog/TareasBacklog";
 import "./Sprint.scss";
 import { ISprints } from "../../../types/ISprints";
 import { ListaTareasSprint } from "../../ui/ListaTareasSprint/ListaTareasSprint";

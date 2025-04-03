@@ -1,30 +1,41 @@
 import { FC } from "react";
 import { ISprints } from "../../../../types/ISprints";
+import styles from "./verSprintModal.module.css"
+import ReactDOM from "react-dom";
+import { Button } from "react-bootstrap";
+
 interface IVerCrearModal {
-    sprints: ISprints | null;
-    handelCloseVerSprints: ()=>void
+    sprints: ISprints;
+    close: (value: boolean) => void;
 }
-export const VerSprintsModal: FC<IVerCrearModal> = ({ sprints, handelCloseVerSprints }) => {
-  return (
-    <>
-      <div>
-        <div>
-          <h1>ver Tarea</h1>
-          <div>
+
+export const VerSprintsModal: FC<IVerCrearModal> = ({ sprints, close }) => {
+  return ReactDOM.createPortal(
+      <div className={styles.mainDiv}>
+
+
+        <div className={styles.modalUser}>
+
+          <h1 className={styles.divTarea}>{sprints.nombre}</h1>
+
+          <div className={styles.dateContainer} >
             <h2>
-              Nombre: <p>{sprints ? sprints.nombre :""}</p>
+              Inicio: {sprints.fechaInicio}
             </h2>
+            
             <h2>
-              FechaInicio: <p>{new Date(sprints ? sprints.fechaInicio :"").toLocaleDateString()}</p>
-            </h2>
-            <h2>
-              FechaCierre:{" "}
-              <p>{new Date(sprints ? sprints.fechaCierre :"").toLocaleDateString()}</p>
+              Cierre: {sprints.fechaCierre}
             </h2>
           </div>
-          <button onClick={handelCloseVerSprints}>cerrar Sprint</button>
+
+          <div style={{marginBottom:"20px"}} onClick={()=>{close(false)}}>
+            <button type="button" className="btn btn-outline-danger">Cerrar</button>
+          </div>
         </div>
+
+
       </div>
-    </>
+      ,
+    document.body
   );
 };

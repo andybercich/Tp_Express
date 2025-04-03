@@ -1,36 +1,69 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { ITarea } from "../../../types/ITareas";
-import { useSprint } from "../../../hooks/useSprint";
 import "./CardTareasBacklog.scss";
-import { tareaStore } from "../../../store/tareasStore";
-import { useShallow } from "zustand/shallow";
 import { VerTareaModal } from "../modals/VerTareaModal/VerTareaModal";
+import { CrearTareaModal } from "../modals/CrearTareaModals/CrearTareaModals";
+import { badContest, confirmAlert, godContest } from "../PopUps/Alerts/ServerBadAlert";
+import { deleteTareaPorIdController, moveTareaToSprint} from "../../../Controllers/tareaController";
+import { sprintStore } from "../../../store/sprintStore";
+import { tareaStore } from "../../../store/tareaStore";
 
 interface ICardTareasBacklog {
   tareas: ITarea;
 }
 
 export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
-  const { getAllSprintsHook, sprints } = useSprint();
-  const { setTareasActivas, tareaActiva } = tareaStore(
-    useShallow((state) => ({
-      setTareasActivas: state.setTareaActiva,
-      tareaActiva: state.tareaActiva,
-    }))
-  );
+  const {sprints,updateSprint } = sprintStore();
+  const [sprintToGo, setSprint] = useState<string>("");
+  const {deleteTarea} = tareaStore();
+  const [edit, setEdit] = useState<boolean>(false);
   const [buttonVerTarea, setbuttonVerTarea] = useState<boolean>(false);
-  const handleOpenVerTarea = (tarea: ITarea) => {
-    setTareasActivas(tarea);
+
+    const handleDelete = async ()=>{
+  
+    
+        
+        const confirm = confirmAlert(`¿Estás seguro de borrar esta tarea, con nombre ${tareas.titulo}?`, "Esta acción no se podrá deshaser");
+  
+        if(await confirm){
+          
+            try {
+              deleteTareaPorIdController(tareas.id).then(()=> deleteTarea(tareas.id));
+              godContest("La tarea logró borrarse correctamente")
+
+  
+  
+          } catch (error) {
+            badContest("No se pudo borrar la tarea: "+ error)
+          }
+        }
+  
+  
+    }
+
+    const handleGoSprint = async()=>{
+      console.log(sprintToGo)
+      if(tareas.fechaLimite && sprintToGo !== ""){
+
+        const response =await moveTareaToSprint(tareas.id, sprintToGo)
+
+        await deleteTarea(tareas.id);
+        await updateSprint(response);
+      }else{
+        badContest(`La tarea ${tareas.titulo} para ser enviada a su sprint, debe tener fecha limite, y un sprint asignado`)
+      }
+
+
+    }
+
+
+  const handleOpenVerTarea = () => {
     setbuttonVerTarea(true);
   };
   const handleCloseVerTarea = () => {
-    setTareasActivas(null);
     setbuttonVerTarea(false);
   };
 
-  useEffect(() => {
-    getAllSprintsHook();
-  }, []);
 
   return (
     <>
@@ -38,8 +71,8 @@ export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
         <h3>
           <b>Titulo:</b> {tareas.titulo}
         </h3>
-        <button className="cardTareasBacklogButton">Enviar a backlog</button>
-        <select defaultValue="">
+        <button onClick={()=>{handleGoSprint()}} className="cardTareasBacklogButton">Enviar a su sprint</button>
+        <select onChange={(e) => setSprint(e.target.value)} defaultValue="">
           <option value="" disabled hidden>
             Seleccione una sprint
           </option>
@@ -57,25 +90,26 @@ export const CardTareasBacklog: FC<ICardTareasBacklog> = ({ tareas }) => {
         </select>
         <div className="buttonCard">
           <button
-            onClick={() => handleOpenVerTarea(tareas)}
+            onClick={() => handleOpenVerTarea()}
             className="buttonCardVisibility"
           >
             <span className="material-symbols-outlined">visibility</span>
           </button>
-          <button className="buttonCardEdit">
+          <button onClick={()=>{setEdit(true)}} className="buttonCardEdit">
             <span className="material-symbols-outlined">edit_square</span>
           </button>
-          <button className="buttonCardDelete">
+          <button onClick={()=>{handleDelete()}} className="buttonCardDelete">
             <span className="material-symbols-outlined">delete</span>
           </button>
         </div>
       </div>
       {buttonVerTarea && (
         <VerTareaModal
-          tarea={tareaActiva}
+          tarea={tareas}
           handelCloseVerTarea={handleCloseVerTarea}
         />
       )}
+      {edit ? <CrearTareaModal close={setEdit} tarea={tareas}></CrearTareaModal> : null}
     </>
   );
 };

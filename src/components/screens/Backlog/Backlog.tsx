@@ -2,19 +2,25 @@ import { useState } from "react";
 import { ListaSprints } from "../../ui/ListaSprints/ListaSprints";
 import { TareasBacklog } from "../../ui/TareasBacklog/TareasBacklog";
 import "./Backlog.scss"
-import { getSprintsController } from "../../../data/sprintController";
+import { getSprintsController } from "../../../Controllers/sprintController";
+import { sprintStore } from "../../../store/sprintStore";
+import { tareaStore } from "../../../store/tareaStore";
+import { getTareasController } from "../../../Controllers/tareaController";
 
 export const Backlog = () => {
-
+  const {setArraySprints} = sprintStore();
+  const {setArrayTareas} = tareaStore();
 
   useState(async ()=>{
 
-    const fetchSprints = async () => {
+    const fetchSprintsTareas = async () => {
       const sprintsCall = await getSprintsController();
-      console.log(sprintsCall);
+      const tareas = await getTareasController();
+      setArraySprints(sprintsCall);
+      setArrayTareas(tareas);
     };
 
-    fetchSprints();
+    fetchSprintsTareas();
 
   },)
 
